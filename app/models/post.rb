@@ -7,7 +7,7 @@ validate :clickbait
 
 def clickbait
   unless self.title.include?(
-    "Won't Believe" || "Secret" || "Guess" || ""
+    "Won't Believe" || "Secret" || "Guess" || "Top"
     )
-
+  error.add(:clickbaity)
 end
