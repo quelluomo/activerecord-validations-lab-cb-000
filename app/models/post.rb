@@ -10,7 +10,7 @@ validate :clickbait
        !title.include?("Won't Believe") ||
        !title.include?("Secret") ||
        !title.include?("Guess") ||
-       !title.match(/Top\s\d+/)
+       !title.include?(/Top\s\d+/)
     errors.add(:title, "Not a clickbait-y title")
     end
   end
