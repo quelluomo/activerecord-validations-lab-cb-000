@@ -3,15 +3,11 @@ validates :title, presence: true
 validates :content, length: { minimum: 250 }
 validates :summary, length: { maximum: 250 }
 validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
-validate :clickbait
+validate :title_is_clickbaity
 
-  def clickbait
-    if title == nil &&
-       !title.include?("Won't Believe") ||
-       !title.include?("Secret") ||
-       !title.include?("Guess") ||
-       !title.include?(/Top\s\d+/)
-    errors.add(:title, "Not a clickbait-y title")
+  def title_is_clickbaity
+    if title.present? && !title.include?("Won't Believe") && !title.include?("Secret") && !title.include?("Guess") && !title.match(/Top\s\d+/)
+      errors.add(:title, "is not clickbaity enough!")
     end
   end
 
