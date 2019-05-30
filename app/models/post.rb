@@ -6,11 +6,11 @@ validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
 validate :clickbait
 
   def clickbait
-    if !self.title == nil &&
-       !self.title.include?("Won't Believe") ||
-       !self.title.include?("Secret") ||
-       !self.title.include?("Guess") ||
-       !self.title.match(/Top\s\d+/)
+    if title == nil &&
+       !title.include?("Won't Believe") ||
+       !title.include?("Secret") ||
+       !title.include?("Guess") ||
+       !title.match(/Top\s\d+/)
     errors.add(:title, "Not a clickbait-y title")
     end
   end
