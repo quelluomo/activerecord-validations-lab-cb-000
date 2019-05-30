@@ -9,5 +9,5 @@ def clickbait
   unless self.title.include?(
     "Won't Believe" || "Secret" || "Guess" || "Top"
     )
-  error.add(:clickbaity)
+  error.add(:clickbaity, "Not a clickbait-y title")
 end
