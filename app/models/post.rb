@@ -10,6 +10,6 @@ validate :clickbait
       "Won't Believe" || "Secret" || "Guess" || "Top"
       )
     error.add(:clickbaity, "Not a clickbait-y title")
-  end
+    end
   end
 end
