@@ -6,7 +6,8 @@ validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
 validate :clickbait
 
   def clickbait
-    if !title.include?("Won't Believe") ||
+    if self.title == nil
+       !title.include?("Won't Believe") ||
        !title.include?("Secret") ||
        !title.include?("Guess") ||
        !title.include?("Top [number]")
