@@ -11,4 +11,5 @@ validate :clickbait
       )
     error.add(:clickbaity, "Not a clickbait-y title")
   end
+  end
 end
