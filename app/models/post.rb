@@ -9,7 +9,7 @@ validate :clickbait
     if !title.include?("Won't Believe") ||
        !title.include?("Secret") ||
        !title.include?("Guess") ||
-       !title.include?("Top")
+       !title.include?("Top [number]")
     error.add(:title, "Not a clickbait-y title")
     end
   end
